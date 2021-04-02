@@ -1,22 +1,28 @@
 import styled from "styled-components";
 import Picture from "./picture";
+import Contact from "./contact";
 import { applyFontStyle } from "themes";
 
 const Profile = () => {
   return (
     <Wrapper>
-      <div>
-        <Picture/>
-      </div>
-      <Content>
-        <h1>
-          My name is Clément. <br/>
-          Senior software Engineer.
-        </h1>
-        <h2>
-          Lead frontend at Privowny
+      <section>
+        <div>
+          <Picture />
+        </div>
+        <Content>
+          <h1>
+            My name is Clément. <br />
+            Senior software Engineer.
+          </h1>
+          <h2>
+            Lead frontend engineer at Privowny
         </h2>
-      </Content>
+        </Content>
+      </section>
+      <section>
+        <Contact />
+      </section>
     </Wrapper>
   );
 }
@@ -35,9 +41,11 @@ const Content = styled.div`
 `;
 
 const Wrapper = styled.div`
-  padding-top: 4rem;
-  display: grid;
-  grid-template-columns: max-content auto;
+  &>section:nth-child(1) {
+    padding-top: 4rem;
+    display: grid;
+    grid-template-columns: max-content auto;
+  }
 `;
 
 

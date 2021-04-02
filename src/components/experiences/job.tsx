@@ -16,7 +16,7 @@ interface JobProps {
   index: number;
 }
 
-const Job: FunctionComponent<JobProps> = ({ start, end, title, children, index, skills }) => {
+const Job: FunctionComponent<JobProps> = ({ start, end, title, company, children, index, skills }) => {
 
   const [hoverRef, isHover] = useHover();
   return (
@@ -29,6 +29,9 @@ const Job: FunctionComponent<JobProps> = ({ start, end, title, children, index, 
         <Title>
           {title}
         </Title>
+        <Company>
+          At {company}
+        </Company>
         <Content>
           {children}
         </Content>
@@ -80,7 +83,13 @@ const Skills = styled.div`
 
 const Title = styled.div`
   ${props => applyFontStyle(props.theme, "h2")}
-
 `;
+
+const Company = styled.div`
+  ${props => applyFontStyle(props.theme, "h3")}
+  color: ${props => props.theme.color.blackWithOpacity( 0.6 )};
+  padding-top: 0.5rem;
+`;
+
 
 export default Job;

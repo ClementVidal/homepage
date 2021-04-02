@@ -1,6 +1,7 @@
 import styled, { DefaultTheme } from "styled-components";
 import { applyFontStyle } from "themes";
 import Image from "next/image";
+import Link from "next/link";
 import { useScrollTo } from "../scroll-to";
 
 const Content = () => {
@@ -25,30 +26,30 @@ const Content = () => {
           </a>
         </li>
         <li>
-          <a>
+          <Link href="/contact">
             Blog
-          </a>
+          </Link>
         </li>
         <li>
-          <a>
+          <Link href="/contact">
             Contact
-          </a>
+          </Link>
         </li>
       </Links>
       <Social>
         <li>
-          <a>
+          <a href="http://github.com/ClementVidal" target="_blank">
             <Image src="/icons/github.svg" alt="Github link" width="30" height="30" />
           </a>
         </li>
         <li>
-          <a>
-            <Image src="/icons/twitter.svg" alt="Github link" width="30" height="30" />
+          <a href="https://twitter.com/clementvidalpro" target="_blank">
+            <Image src="/icons/twitter.svg" alt="Twitter link" width="30" height="30" />
           </a>
         </li>
         <li>
-          <a>
-            <Image src="/icons/linkedin.svg" alt="Github link" width="30" height="30" />
+          <a href="https://www.linkedin.com/in/clementvidalprofile/" target="_blank">
+            <Image src="/icons/linkedin.svg" alt="Linkedin link" width="30" height="30" />
           </a>
         </li>
       </Social>

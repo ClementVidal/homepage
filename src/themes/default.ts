@@ -1,7 +1,7 @@
 import { DefaultTheme } from "styled-components";
 
 
-export default {
+export const style = {
   breakpoint: {
     mobile: "480px",
     tablet: "768px",

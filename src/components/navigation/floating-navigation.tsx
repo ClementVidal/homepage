@@ -34,6 +34,7 @@ const Wrapper = styled.div<{ visible: boolean }>`
   transition: all 175ms ease-in-out;
   position: sticky;
   position: fixed;
+  pointer-events: ${props => props.visible ? "all" : "none"};
   transform: translateY( ${props => props.visible ? "0" : "-3rem"});
   top: 0;
   opacity: ${props => props.visible ? "1" : "0"};

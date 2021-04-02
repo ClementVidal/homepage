@@ -2,19 +2,17 @@ import styled from "styled-components";
 import { ContentFrame } from "components";
 import FloatingNavigation from "../navigation/floating-navigation";
 import Navigation from "../navigation/navigation";
-import Contact from "./contact";
-import Profile from "./profile";
 import Decoration from "../decoration";
+import { FunctionComponent } from "react";
 
-const Header = () => {
+const Header: FunctionComponent = ({ children }) => {
   return (
     <Wrapper>
       <Decoration />
       <Navigation />
       <FloatingNavigation />
       <ContentFrame>
-        <Profile />
-        <Contact />
+        {children}
       </ContentFrame>
     </Wrapper>
   );
