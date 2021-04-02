@@ -1,15 +1,17 @@
 import styled from "styled-components";
 import { ContentFrame } from "components";
-import Navigation from "../navigation/navigation"
-import Contact from "./contact"
+import FloatingNavigation from "../navigation/floating-navigation";
+import Navigation from "../navigation/navigation";
+import Contact from "./contact";
 import Profile from "./profile";
-import Decoration from "./decoration";
+import Decoration from "../decoration";
 
 const Header = () => {
   return (
     <Wrapper>
       <Decoration />
       <Navigation />
+      <FloatingNavigation />
       <ContentFrame>
         <Profile />
         <Contact />
