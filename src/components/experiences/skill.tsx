@@ -28,8 +28,8 @@ const Catalog = {
   python: {
     logo: "/icons/python.svg"
   },
-  invalid: {
-    logo: "/icons/node.png"
+  lua: {
+    logo: "/icons/lua.svg"
   }
 }
 
@@ -42,8 +42,9 @@ interface SkillProps {
 const Skill: FunctionComponent<SkillProps> = ({ type }) => {
   let item = Catalog[type];
   if (!item) {
-    item = Catalog.invalid;
+    return null;
   }
+
   return (
     <Wrapper>
       <Image src={item.logo} alt="Skill image" width={50} height={50} />

@@ -14,7 +14,7 @@ const Profile = () => {
           Senior software Engineer.
         </h1>
         <h2>
-          Lead Typescript at Privowny
+          Lead frontend at Privowny
         </h2>
       </Content>
     </Wrapper>

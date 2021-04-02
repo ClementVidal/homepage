@@ -13,10 +13,10 @@ const FloatingNavigation = () => {
   const onScroll = useCallback((prev: number, curr: number) => {
     if (curr > DetachedThrshold && !visible) {
       setIsVisible(true);
-      console.log( "true");
+      console.log("true");
     } else if (curr <= DetachedThrshold && visible) {
       setIsVisible(false);
-      console.log( "false");
+      console.log("false");
     }
   }, [visible]);
   useScrollPosition(onScroll, [onScroll]);
@@ -40,7 +40,7 @@ const Wrapper = styled.div<{ visible: boolean }>`
   width: 100%;
   background-color: ${props => props.theme.color.white};
   overflow: hidden;
-  box-shadow: 0px 0px 15px 0px ${props => props.theme.color.blackWithOpacity( 0.4)};
+  box-shadow: 0px 0px 15px 0px ${props => props.theme.color.blackWithOpacity(0.4)};
 `;
 
 export default FloatingNavigation;

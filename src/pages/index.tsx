@@ -1,4 +1,4 @@
-import { Header, Layout, Experiences } from "components";
+import { Header, Layout, Experiences, Footer } from "components";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { applyFontStyle} from "themes";
 import style from "themes/default";
@@ -30,6 +30,7 @@ function HomePage() {
       <Layout>
         <Header />
         <Experiences />
+        <Footer/>
       </Layout>
     </ThemeProvider>
 

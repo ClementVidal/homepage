@@ -1,8 +1,16 @@
 import styled, { DefaultTheme } from "styled-components";
 import { applyFontStyle } from "themes";
 import Image from "next/image";
+import { useScrollTo } from "../scroll-to";
 
 const Content = () => {
+
+  const [scrollTo] = useScrollTo();
+
+  const handleGoToExperience = () => {
+    scrollTo(".experiences", -16*4);
+  }
+
   return (
     <Wrapper>
       <Name>
@@ -12,7 +20,7 @@ const Content = () => {
       </Name>
       <Links>
         <li>
-          <a>
+          <a onClick={handleGoToExperience}>
             Experiences
           </a>
         </li>

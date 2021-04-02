@@ -10,7 +10,7 @@ const contentObjects = getContent();
 
 const Experiences = () => {
   return (
-    <Wrapper>
+    <Wrapper className="experiences">
       <h1>
         Experiences
       </h1>
