@@ -12,18 +12,22 @@ export default {
     h1: {
       fontSize: "3rem",
       fontWeight: "400",
+      lineHeight: "normal",
     },
     h2: {
       fontSize: "2rem",
       fontWeight: "400",
+      lineHeight: "normal",
     },
     h3: {
       fontSize: "1.5rem",
       fontWeight: "400",
+      lineHeight: "normal",
     },
     body: {
       fontSize: "1rem",
       fontWeight: "200",
+      lineHeight: "1.4rem",
     },
   },
   color: {

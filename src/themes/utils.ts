@@ -8,5 +8,6 @@ export const applyFontStyle = (
   return `
     font-size: ${style.fontSize};
     font-weight: ${style.fontWeight};
+    line-height: ${style.lineHeight};
   `;
 };

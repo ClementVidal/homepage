@@ -29,7 +29,6 @@ const gradient = (theme: DefaultTheme, hightlight: boolean, isLast: boolean) => 
 const Line = styled.div<Pick<TimelineSegmentProps, "isLast">>`
   position: relative;
   left: 1px;
-  transition: all 175ms ease-in-out;
   display: block;
   width: 2px;
   ${props => props.isLast ? "margin-top: 18px" : ""};

@@ -4,6 +4,7 @@ import "styled-components";
 interface FontStyle {
   fontSize: string;
   fontWeight: string;
+  lineHeight: string;
 }
 
 declare module "styled-components" {

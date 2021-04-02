@@ -5,28 +5,31 @@ import Image from "next/image";
 
 const Catalog = {
   gitlab: {
-    logo: "/skills/gitlab.png"
+    logo: "/icons/gitlab.svg",
   },
   react: {
-    logo: "/skills/react.png"
+    logo: "/icons/react.svg"
   },
   node: {
-    logo: "/skills/node.png"
+    logo: "/icons/node.png"
   },
   typescript: {
-    logo: "/skills/typescript.png"
+    logo: "/icons/typescript.svg"
   },
   cpp: {
-    logo: "/skills/cpp.png"
+    logo: "/icons/cpp.svg"
   },
   angular: {
-    logo: "/skills/angular.png"
+    logo: "/icons/angular.svg"
   },
   webpack: {
-    logo: "/skills/webpack.png"
+    logo: "/icons/webpack.svg"
+  },
+  python: {
+    logo: "/icons/python.svg"
   },
   invalid: {
-    logo: "/skills/node.png"
+    logo: "/icons/node.png"
   }
 }
 

@@ -16,7 +16,7 @@ interface JobProps {
   index: number;
 }
 
-const Job: FunctionComponent<JobProps> = ({ start, end, title, children, index,  skills }) => {
+const Job: FunctionComponent<JobProps> = ({ start, end, title, children, index, skills }) => {
 
   const [hoverRef, isHover] = useHover();
   return (
@@ -24,7 +24,7 @@ const Job: FunctionComponent<JobProps> = ({ start, end, title, children, index, 
       <div>
         <TimeRange start={start} end={end} />
       </div>
-      <TimelineSegment isLast={index===0} hightlight={isHover}/>
+      <TimelineSegment isLast={index === 0} hightlight={isHover} />
       <div>
         <Title>
           {title}
@@ -33,7 +33,7 @@ const Job: FunctionComponent<JobProps> = ({ start, end, title, children, index, 
           {children}
         </Content>
         <Skills>
-          {skills.map(skill => <Skill type={skill} />)}
+          {skills.map((skill) => <Skill type={skill} key={skill} />)}
         </Skills>
       </div>
     </Wrapper>
@@ -54,7 +54,19 @@ const Wrapper = styled.section`
 `;
 
 const Content = styled.div`
+
+  ${props => applyFontStyle(props.theme, "body")}
   padding-top: 1rem;
+  li {
+    padding-left: 1rem;
+    padding-top:0.5rem;
+    list-style: none;
+
+    &:before {
+      content: "○";
+      padding-right: 5px;
+    }
+  }
 `;
 
 const Skills = styled.div`

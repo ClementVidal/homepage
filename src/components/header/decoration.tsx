@@ -40,10 +40,10 @@ ${animate(-15, 46, 10, -2)}
 `;
 
 const a4 = keyframes`
-${animate(-15, 70, 2, 3)}
+${animate(-15, 70, 10, 3)}
 `;
 
-const duration = "20s";
+const duration = "15s";
 
 const Wrapper = styled.div`
   height: 100vh;
