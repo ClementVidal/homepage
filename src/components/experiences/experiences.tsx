@@ -10,7 +10,8 @@ const contentObjects = getContent();
 
 const Experiences = () => {
   return (
-    <Wrapper className="experiences">
+    <Wrapper>
+      <Anchor id="experiences" />
       <h1>
         Experiences
       </h1>
@@ -27,6 +28,11 @@ const Experiences = () => {
   );
 }
 
+const Anchor = styled.div`
+  top: -120px;
+  position: relative;
+`;
+
 const Wrapper = styled(ContentFrame)`
   padding-top: 3rem;
   color: ${props => props.theme.color.black};
@@ -38,6 +44,7 @@ const Wrapper = styled(ContentFrame)`
     ${props => applyFontStyle(props.theme, "h1")}
     padding-bottom: 2rem;
   }
+
 `;
 
 export default Experiences;

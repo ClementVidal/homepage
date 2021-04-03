@@ -1,9 +1,11 @@
-import { Header, Layout, Experiences, Footer } from "components";
+import { Header, Layout, Experiences, Footer, Profile } from "components";
 
 function HomePage() {
   return (
     <Layout>
-      Contact
+      <Header >
+        Contact
+      </Header>
     </Layout>
   );
 }

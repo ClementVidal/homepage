@@ -5,9 +5,9 @@ interface ContentFrameProps {
   className?: string;
 }
 
-const ContentFrame: FunctionComponent<ContentFrameProps> = ({ className, children }) => {
+const ContentFrame: FunctionComponent<ContentFrameProps> = ({ className, children, ...other }) => {
   return (
-    <Container className={className}>
+    <Container className={className} {...other}>
       <Content>
         {children}
       </Content>

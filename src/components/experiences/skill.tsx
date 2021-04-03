@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 import styled from "styled-components";
-import Job from "./job";
 import Image from "next/image";
+import Tooltip from "../tooltip";
 
 const Catalog = {
   gitlab: {
@@ -46,14 +46,16 @@ const Skill: FunctionComponent<SkillProps> = ({ type }) => {
   }
 
   return (
-    <Wrapper>
-      <Image src={item.logo} alt="Skill image" width={50} height={50} />
-    </Wrapper>
+    <Tooltip content={type}>
+      <Wrapper>
+        <Image src={item.logo} alt="Skill image" width={50} height={50} />
+      </Wrapper>
+    </Tooltip>
   );
 }
 
 const Wrapper = styled.div`
-overflow: hidden;
+  overflow: hidden;
   display: inline-flex;
   border-radius: 5px;
   box-shadow: 0px 0px 7px 0px  ${props => props.theme.color.blackWithOpacity(0.2)};

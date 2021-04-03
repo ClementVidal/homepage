@@ -27,7 +27,7 @@ export const style = {
     body: {
       fontSize: "1rem",
       fontWeight: "200",
-      lineHeight: "1.4rem",
+      lineHeight: "1.5rem",
     },
   },
   color: {

@@ -21,9 +21,9 @@ const Content = () => {
       </Name>
       <Links>
         <li>
-          <a onClick={handleGoToExperience}>
+          <Link href="/#experiences">
             Experiences
-          </a>
+          </Link>
         </li>
         <li>
           <Link href="/contact">

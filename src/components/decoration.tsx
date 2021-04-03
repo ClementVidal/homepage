@@ -28,11 +28,11 @@ const animate = (r: number, t: number, dr: number, dt: number) => {
 }
 
 const a1 = keyframes`
-${animate(-4, 75, 4, -1)}
+${animate(-4, 75, 15, -4)}
 `;
 
 const a2 = keyframes`
-${animate(10, 72, 8, 2)}
+${animate(10, 72, 8, 7)}
 `;
 
 const a3 = keyframes`
@@ -40,10 +40,10 @@ ${animate(-15, 46, 10, -2)}
 `;
 
 const a4 = keyframes`
-${animate(-15, 70, 10, 3)}
+${animate(-15, 70, 10, 6)}
 `;
 
-const duration = "15s";
+const duration = "10s";
 
 const Wrapper = styled.div`
   height: 100vh;
