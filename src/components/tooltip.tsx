@@ -7,7 +7,7 @@ interface TooltipProps {
   content: string;
 }
 
-const Tooltip: FunctionComponent<TooltipProps> = ({ children, delay= 400, content  }) => {
+const Tooltip: FunctionComponent<TooltipProps> = ({ children, delay = 400, content }) => {
 
   let timeout: any = null;
   const [active, setActive] = useState(false);
@@ -16,14 +16,12 @@ const Tooltip: FunctionComponent<TooltipProps> = ({ children, delay= 400, conten
     if (timeout || active)
       return;
 
-      console.log("Show", content);
-      timeout = setTimeout(() => {
-        setActive(true);
-      }, delay);
-    };
+    timeout = setTimeout(() => {
+      setActive(true);
+    }, delay);
+  };
 
-    const hideTip = () => {
-    console.log("hide", content);
+  const hideTip = () => {
     clearTimeout(timeout);
     timeout = null;
     setActive(false);
@@ -34,11 +32,9 @@ const Tooltip: FunctionComponent<TooltipProps> = ({ children, delay= 400, conten
       onMouseEnter={showTip}
       onMouseLeave={hideTip}
     >
-      {/* Wrapping */}
       {children}
       {active && (
         <Tip>
-          {/* Content */}
           {content}
         </Tip>
       )}
@@ -47,7 +43,7 @@ const Tooltip: FunctionComponent<TooltipProps> = ({ children, delay= 400, conten
 }
 
 const Size = 6;
-const Margin = 8;
+const Margin = 10;
 
 const Tip = styled.div`
   position: absolute;

@@ -4,4 +4,8 @@ const withMDX = require("@next/mdx")({
 
 module.exports = withMDX({
   pageExtensions: ["ts", "tsx", "md", "mdx"],
+  reactStrictMode: true,
+  images: {
+    domains: ['res.cloudinary.com'],
+  },
 });

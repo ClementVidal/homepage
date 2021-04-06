@@ -26,13 +26,8 @@ const Content = () => {
           </Link>
         </li>
         <li>
-          <Link href="/contact">
+          <Link href="/blog">
             Blog
-          </Link>
-        </li>
-        <li>
-          <Link href="/contact">
-            Contact
           </Link>
         </li>
       </Links>
@@ -40,6 +35,11 @@ const Content = () => {
         <li>
           <a href="http://github.com/ClementVidal" target="_blank">
             <Image src="/icons/github.svg" alt="Github link" width="30" height="30" />
+          </a>
+        </li>
+        <li>
+          <a href="https://dev.to/clementvidal" target="_blank">
+            <Image src="/icons/dev.svg" alt="Dev.to" width="30" height="30" />
           </a>
         </li>
         <li>

@@ -1,35 +1,53 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, memo } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import Tooltip from "../tooltip";
 
-const Catalog = {
+interface CatalogItem {
+  logo: string;
+  displayName: string;
+}
+
+const Catalog: Record<string, CatalogItem> = {
   gitlab: {
     logo: "/icons/gitlab.svg",
+    displayName: "Gitlab"
   },
   react: {
-    logo: "/icons/react.svg"
+    logo: "/icons/react.svg",
+    displayName: "React"
   },
   node: {
-    logo: "/icons/node.png"
+    logo: "/icons/node.png",
+    displayName: "Noje JS"
   },
   typescript: {
-    logo: "/icons/typescript.svg"
+    logo: "/icons/typescript.svg",
+    displayName: "Typescript"
   },
   cpp: {
-    logo: "/icons/cpp.svg"
+    logo: "/icons/cpp.svg",
+    displayName: "C++"
   },
   angular: {
-    logo: "/icons/angular.svg"
+    logo: "/icons/angular.svg",
+    displayName: "Angular"
   },
   webpack: {
-    logo: "/icons/webpack.svg"
+    logo: "/icons/webpack.svg",
+    displayName: "Webpack"
   },
   python: {
-    logo: "/icons/python.svg"
+    logo: "/icons/python.svg",
+    displayName: "Python"
   },
   lua: {
-    logo: "/icons/lua.svg"
+    logo: "/icons/lua.svg",
+    displayName: "Lua"
+  },
+  rxjs: {
+    logo: "/icons/rxjs.svg",
+    displayName: "Rxjs"
   }
 }
 
@@ -46,7 +64,7 @@ const Skill: FunctionComponent<SkillProps> = ({ type }) => {
   }
 
   return (
-    <Tooltip content={type}>
+    <Tooltip content={item.displayName}>
       <Wrapper>
         <Image src={item.logo} alt="Skill image" width={50} height={50} />
       </Wrapper>
@@ -61,4 +79,4 @@ const Wrapper = styled.div`
   box-shadow: 0px 0px 7px 0px  ${props => props.theme.color.blackWithOpacity(0.2)};
 `;
 
-export default Skill;
+export default memo(Skill);
