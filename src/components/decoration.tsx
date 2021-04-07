@@ -43,7 +43,7 @@ const a4 = keyframes`
 ${animate(-15, 70, 10, 6)}
 `;
 
-const duration = "10s";
+const duration = "15s";
 
 const Wrapper = styled.div`
   height: 100%;
@@ -59,7 +59,7 @@ const Wrapper = styled.div`
     width: 150%;
     height: 150%;
     position: absolute;
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.08);
   }
 
   div:nth-child(1) {
