@@ -1,4 +1,5 @@
-import { Header, Layout, Experiences, Footer, Profile } from "components";
+import { Header, Layout, Footer, Profile } from "components";
+import { ExperiencesList } from "./experiences";
 
 function HomePage() {
   return (
@@ -6,7 +7,7 @@ function HomePage() {
       <Header >
         <Profile />
       </Header>
-      <Experiences />
+      <ExperiencesList />
       <Footer />
     </Layout>
   );

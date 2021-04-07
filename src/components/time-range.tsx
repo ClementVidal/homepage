@@ -4,7 +4,7 @@ import { applyFontStyle, breakpointUp } from "themes";
 
 
 interface TimeRangeProps {
-  start: Date,
+  start?: Date,
   end: Date
 }
 
@@ -28,9 +28,9 @@ const TimeRange: FunctionComponent<TimeRangeProps> = ({ start, end }) => {
       <div>
         {MonthMap[end.getMonth()]} {end.getFullYear()}
       </div>
-      <div>
+      { start && <div>
         {MonthMap[start.getMonth()]} {start.getFullYear()}
-      </div>
+      </div> }
     </Wrapper>
   )
 }

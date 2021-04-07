@@ -2,15 +2,15 @@ import ContentFrame from "components/content-frame";
 import { getContent } from "content";
 import styled from "styled-components";
 import { applyFontStyle, breakpointUp } from "themes";
-import Job from "./job";
-import { SkillType } from "./skill";
+import Experiencce from "./experience";
+import { SkillType } from "../../components/skill";
 
 const contentObjects = getContent();
 
 
-const Experiences = () => {
+const ExperiencesList = () => {
   return (
-    <Wrapper>
+    <Wrapper fillSpace={true}>
       <Anchor id="experiences" />
       <h1>
         Experiences
@@ -19,9 +19,9 @@ const Experiences = () => {
         const Compo = experience.component;
         const meta = experience.meta;
         return (
-          <Job key={index} {...meta} skills={meta.skills as SkillType[]} index={index}>
+          <Experiencce key={index} {...meta} skills={meta.skills as SkillType[]} index={index}>
             <Compo />
-          </Job>
+          </Experiencce>
         );
       })}
     </Wrapper>
@@ -43,7 +43,6 @@ const Wrapper = styled(ContentFrame)`
   grid-auto-flow: row;
   row-gap: 2rem;
 
-
   ${breakpointUp("mobile")} {
     padding-top: 3rem;
   }
@@ -55,4 +54,4 @@ const Wrapper = styled(ContentFrame)`
 
 `;
 
-export default Experiences;
+export default ExperiencesList;

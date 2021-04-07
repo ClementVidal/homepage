@@ -2,12 +2,13 @@
 import { FunctionComponent } from "react";
 import styled from "styled-components";
 import { applyFontStyle, breakpointUp } from "themes";
-import Skill, { SkillType } from "./skill";
-import TimelineSegment from "./timeline-segment";
-import TimeRange from "./time-range";
-import useHover from "components/hover";
+import { SkillType } from "../../components/skill";
+import SkillsList from "../../components/skills-list";
+import TimelineSegment from "../../components/timeline-segment";
+import TimeRange from "../../components/time-range";
+import useHover from "../../components/hover";
 
-interface JobProps {
+interface ExperienceProps {
   company: string;
   title: string;
   start: Date;
@@ -16,7 +17,7 @@ interface JobProps {
   index: number;
 }
 
-const Job: FunctionComponent<JobProps> = ({ start, end, title, company, children, index, skills }) => {
+const Experiencce: FunctionComponent<ExperienceProps> = ({ start, end, title, company, children, index, skills }) => {
 
   const [hoverRef, isHover] = useHover();
   return (
@@ -35,9 +36,7 @@ const Job: FunctionComponent<JobProps> = ({ start, end, title, company, children
         <Content>
           {children}
         </Content>
-        <Skills>
-          {skills.map((skill) => <Skill type={skill} key={skill} />)}
-        </Skills>
+        <SkillsList skills={skills} />
       </div>
     </Wrapper>
   );
@@ -97,4 +96,4 @@ const Company = styled.div`
 `;
 
 
-export default Job;
+export default Experiencce;

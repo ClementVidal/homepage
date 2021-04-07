@@ -1,7 +1,7 @@
 import { FunctionComponent, memo } from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import Tooltip from "../tooltip";
+import Tooltip from "./tooltip";
 import { breakpointUp } from "themes";
 
 interface CatalogItem {
@@ -17,6 +17,10 @@ const Catalog: Record<string, CatalogItem> = {
   react: {
     logo: "/icons/react.svg",
     displayName: "React"
+  },
+  javascript: {
+    logo: "/icons/javascript.svg",
+    displayName: "Javascript"
   },
   node: {
     logo: "/icons/node.png",

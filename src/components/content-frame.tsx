@@ -4,6 +4,7 @@ import { breakpointUp, breakpointValue } from "themes";
 
 interface ContentFrameProps {
   className?: string;
+  fillSpace?: boolean;
 }
 
 const ContentFrame: FunctionComponent<ContentFrameProps> = ({ className, children, ...other }) => {
@@ -16,10 +17,12 @@ const ContentFrame: FunctionComponent<ContentFrameProps> = ({ className, childre
   )
 }
 
-const Container = styled.div`
+const Container = styled.div<{fillSpace?: boolean}>`
   position: relative;
   display: grid;
   grid-auto-flow: row;
+  ${props => props.fillSpace ? "min-height: 100vh;" : ""}
+
 `;
 
 const Content = styled.div`
