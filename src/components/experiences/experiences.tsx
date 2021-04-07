@@ -29,7 +29,10 @@ const Experiences = () => {
 }
 
 const Anchor = styled.div`
-  top: -120px;
+  top: -1rem;
+  ${breakpointUp("mobile")} {
+    top: -120px;
+  }
   position: relative;
 `;
 

@@ -20,17 +20,22 @@ const Picture = () => {
 const Wrapper = styled.div`
   display: inline-flex;
   border-radius: 50%;
-  width: 200;
-  height: 200;
-  border: 2px solid ${props => props.theme.color.secondary};
-  display: none;
+  width: 150px;
+  height: 150px;
+
   ${breakpointUp("mobile")} {
-    display: inline-flex;
+    width: 200px;
+    height: 200px;
   }
+
+  border: 2px solid ${props => props.theme.color.secondary};
 
   & > div {
     display: flex;
-    margin: 10px;
+    margin: 5px;
+    ${breakpointUp("mobile")} {
+      margin: 10px;
+    }
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid ${props => props.theme.color.secondaryWithOpacity(0.2)};

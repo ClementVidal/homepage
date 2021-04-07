@@ -45,6 +45,7 @@ const Section = styled.section`
 
   grid-template-columns: min-content 1fr;
   grid-template-areas:
+    "pic pic"
     "h1 h1"
     "h2 h2"
   ;
@@ -61,6 +62,11 @@ const Section = styled.section`
   &>div {
     grid-area: pic;
     align-self: center;
+    display: inline-flex;
+    justify-self: center;
+    ${breakpointDown("mobile")} {
+      margin-bottom:1rem;
+    }
   }
 
   h1 {
@@ -80,7 +86,7 @@ const Section = styled.section`
 
 const Wrapper = styled.div`
   &>section:nth-child(1) {
-    padding-top: 2rem;
+    padding-top: 1rem;
     ${breakpointUp("mobile")} {
       padding-top: 4rem;
     }

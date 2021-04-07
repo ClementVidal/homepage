@@ -13,10 +13,8 @@ const FloatingNavigation = () => {
   const onScroll = useCallback((prev: number, curr: number) => {
     if (curr > DetachedThrshold && !visible) {
       setIsVisible(true);
-      console.log("true");
     } else if (curr <= DetachedThrshold && visible) {
       setIsVisible(false);
-      console.log("false");
     }
   }, [visible]);
   useScrollPosition(onScroll, [onScroll]);

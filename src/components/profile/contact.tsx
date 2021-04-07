@@ -33,6 +33,7 @@ const Wrapper = styled.div`
   grid-auto-flow: row;
   padding-top: 2rem;
   padding-bottom: 1rem;
+  ${props => applyFontStyle(props.theme, "body")}
 
   ${breakpointUp("mobile")} {
     grid-auto-flow: column;
@@ -46,10 +47,6 @@ const Wrapper = styled.div`
     section:nth-child(2) {
       text-align: end;
       justify-self: end;
-    }
-
-    section div:nth-child(1) {
-      margin-bottom: 1rem;
     }
   }
 
@@ -66,7 +63,7 @@ const Wrapper = styled.div`
   }
 
   a {
-    ${props => applyFontStyle(props.theme, "body")}
+    font-weight: 400;
     ${breakpointUp("mobile")} {
       ${props => applyFontStyle(props.theme, "h3")}
     }
