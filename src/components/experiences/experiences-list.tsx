@@ -3,7 +3,7 @@ import { getContent } from "content";
 import styled from "styled-components";
 import { applyFontStyle, breakpointUp } from "themes";
 import Experiencce from "./experience";
-import { SkillType } from "../../components/skill";
+import { SkillType } from "../skill";
 
 const contentObjects = getContent();
 

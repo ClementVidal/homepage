@@ -1,6 +1,6 @@
 import { BlogArticle } from "blog-article";
 import { Header, Layout, Footer } from "components";
-import { PostsList } from "./posts";
+import { PostsList } from "../components/posts";
 
 interface StaticProps {
   articles: BlogArticle[];

@@ -2,11 +2,11 @@
 import { FunctionComponent } from "react";
 import styled from "styled-components";
 import { applyFontStyle, breakpointUp } from "themes";
-import { SkillType } from "../../components/skill";
-import SkillsList from "../../components/skills-list";
-import TimelineSegment from "../../components/timeline-segment";
-import TimeRange from "../../components/time-range";
-import useHover from "../../components/hover";
+import { SkillType } from "../skill";
+import SkillsList from "../skills-list";
+import TimelineSegment from "../timeline-segment";
+import TimeRange from "../time-range";
+import useHover from "../hover";
 
 interface ExperienceProps {
   company: string;

@@ -1,5 +1,5 @@
 import { Header, Layout, Footer, Profile } from "components";
-import { ExperiencesList } from "./experiences";
+import { ExperiencesList } from "../components/experiences";
 
 function HomePage() {
   return (
