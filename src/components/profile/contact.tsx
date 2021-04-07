@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { applyFontStyle } from "themes";
+import { applyFontStyle, breakpointDown, breakpointUp } from "themes";
 
 const Contact = () => {
   return (
@@ -30,25 +30,46 @@ const Contact = () => {
 
 const Wrapper = styled.div`
   display: grid;
-  grid-auto-flow: column;
-  padding-top: 4rem;
-  padding-bottom: 3rem;
+  grid-auto-flow: row;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
 
-  section:nth-child(1) {
-    text-align: start;
-    justify-self: start;
+  ${breakpointUp("mobile")} {
+    grid-auto-flow: column;
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+
+    section:nth-child(1) {
+      text-align: start;
+      justify-self: start;
+    }
+    section:nth-child(2) {
+      text-align: end;
+      justify-self: end;
+    }
+
+    section div:nth-child(1) {
+      margin-bottom: 1rem;
+    }
   }
-  section:nth-child(2) {
+
+  section {
     text-align: end;
     justify-self: end;
-  }
 
-  section div:nth-child(1) {
-    margin-bottom: 1rem;
+    ${breakpointDown("mobile")} {
+      display: grid;
+      grid-auto-flow: column;
+      column-gap: 1rem;
+      align-items: center;
+    }
   }
 
   a {
-    ${props => applyFontStyle(props.theme, "h3")}
+    ${props => applyFontStyle(props.theme, "body")}
+    ${breakpointUp("mobile")} {
+      ${props => applyFontStyle(props.theme, "h3")}
+    }
   }
 `;
 

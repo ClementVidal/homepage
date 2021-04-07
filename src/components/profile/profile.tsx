@@ -1,25 +1,27 @@
 import styled from "styled-components";
 import Picture from "./picture";
 import Contact from "./contact";
-import { applyFontStyle } from "themes";
+import { applyFontStyle, breakpointDown, breakpointUp, underline } from "themes";
 
 const Profile = () => {
   return (
     <Wrapper>
-      <section>
+      <Section>
         <div>
           <Picture />
         </div>
-        <Content>
-          <h1>
-            My name is Clément. <br />
+        <h1>
+          <Line1>
+            My name is Clément.
+          </Line1>
+          <Line2>
             Senior software Engineer.
-          </h1>
-          <h2>
-            Lead frontend engineer at Privowny
+          </Line2>
+        </h1>
+        <h2>
+          Lead frontend engineer at Privowny
         </h2>
-        </Content>
-      </section>
+      </Section>
       <section>
         <Contact />
       </section>
@@ -27,14 +29,50 @@ const Profile = () => {
   );
 }
 
-const Content = styled.div`
-  padding-left: 2rem;
+const Line1 = styled.div`
+`;
+
+const Line2 = styled.div`
+  ${breakpointDown("mobile")} {
+    ${props => applyFontStyle(props.theme, "h3")}
+  }
+`;
+
+const Section = styled.section`
   align-self: center;
+  display: grid;
+  column-gap: 0rem;
+
+  grid-template-columns: min-content 1fr;
+  grid-template-areas:
+    "h1 h1"
+    "h2 h2"
+  ;
+
+  ${breakpointUp("mobile")} {
+    column-gap: 2rem;
+    grid-template-columns: max-content 1fr;
+    grid-template-areas:
+      "pic h1"
+      "pic h2"
+    ;
+  }
+
+  &>div {
+    grid-area: pic;
+    align-self: center;
+  }
+
   h1 {
+    align-self: flex-end;
+    grid-area: h1;
     ${props => applyFontStyle(props.theme, "h1")}
     margin-bottom: 1rem;
   }
+
   h2 {
+    align-self: flex-start;
+    grid-area: h2;
     ${props => applyFontStyle(props.theme, "h3")}
     color: ${props => props.theme.color.black};
   }
@@ -42,9 +80,10 @@ const Content = styled.div`
 
 const Wrapper = styled.div`
   &>section:nth-child(1) {
-    padding-top: 4rem;
-    display: grid;
-    grid-template-columns: max-content auto;
+    padding-top: 2rem;
+    ${breakpointUp("mobile")} {
+      padding-top: 4rem;
+    }
   }
 `;
 

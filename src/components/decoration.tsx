@@ -46,7 +46,7 @@ ${animate(-15, 70, 10, 6)}
 const duration = "10s";
 
 const Wrapper = styled.div`
-  height: 100vh;
+  height: 100%;
   width: 100%;
   position: absolute;
   overflow: hidden;
@@ -54,7 +54,6 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-
 
   div {
     width: 150%;

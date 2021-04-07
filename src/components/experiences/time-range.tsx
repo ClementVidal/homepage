@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import styled from "styled-components";
-import { applyFontStyle } from "themes";
+import { applyFontStyle, breakpointUp } from "themes";
 
 
 interface TimeRangeProps {
@@ -37,8 +37,21 @@ const TimeRange: FunctionComponent<TimeRangeProps> = ({ start, end }) => {
 
 const Wrapper = styled.div`
   text-align: right;
-  div:nth-child(1) {
-    ${props => applyFontStyle(props.theme, "h3")}
+
+  &>div {
+    ${props => applyFontStyle(props.theme, "body")}
+    line-height: 1.2rem;
+  }
+
+  &>div:nth-child(1) {
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+  }
+
+  ${breakpointUp("mobile")} {
+    &>div:nth-child(1) {
+      ${props => applyFontStyle(props.theme, "h3")}
+    }
   }
 
 `;

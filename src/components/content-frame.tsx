@@ -1,5 +1,6 @@
 import { FunctionComponent, PropsWithChildren } from "react";
 import styled from "styled-components";
+import { breakpointUp, breakpointValue } from "themes";
 
 interface ContentFrameProps {
   className?: string;
@@ -22,9 +23,12 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-  padding: 0 2rem;
+  padding: 0 1rem;
+  ${breakpointUp("mobile")} {
+    padding: 0 2rem;
+  }
   width: 100%;
-  max-width: ${props => props.theme.breakpoint.desktop};
+  max-width: ${breakpointValue("desktop")};
   justify-self: center;
 `;
 

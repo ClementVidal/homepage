@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import styled from "styled-components";
+import { breakpointUp } from "themes";
 
 const Picture = () => {
   return (
@@ -19,7 +20,14 @@ const Picture = () => {
 const Wrapper = styled.div`
   display: inline-flex;
   border-radius: 50%;
+  width: 200;
+  height: 200;
   border: 2px solid ${props => props.theme.color.secondary};
+  display: none;
+  ${breakpointUp("mobile")} {
+    display: inline-flex;
+  }
+
   & > div {
     display: flex;
     margin: 10px;

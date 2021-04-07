@@ -2,15 +2,9 @@ import { DefaultTheme } from "styled-components";
 
 
 export const style = {
-  breakpoint: {
-    mobile: "480px",
-    tablet: "768px",
-    desktop: "1024px",
-    largeDesktop: "1200px",
-  },
   fontStyle: {
     h1: {
-      fontSize: "3rem",
+      fontSize: "2.5rem",
       fontWeight: "400",
       lineHeight: "normal",
     },

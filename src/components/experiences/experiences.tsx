@@ -1,7 +1,7 @@
 import ContentFrame from "components/content-frame";
 import { getContent } from "content";
 import styled from "styled-components";
-import { applyFontStyle } from "themes";
+import { applyFontStyle, breakpointUp } from "themes";
 import Job from "./job";
 import { SkillType } from "./skill";
 
@@ -34,11 +34,16 @@ const Anchor = styled.div`
 `;
 
 const Wrapper = styled(ContentFrame)`
-  padding-top: 3rem;
+  padding-top: 2rem;
   color: ${props => props.theme.color.black};
   display: grid;
   grid-auto-flow: row;
   row-gap: 2rem;
+
+
+  ${breakpointUp("mobile")} {
+    padding-top: 3rem;
+  }
 
   h1 {
     ${props => applyFontStyle(props.theme, "h1")}

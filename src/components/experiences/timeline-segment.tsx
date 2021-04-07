@@ -61,7 +61,6 @@ const Marker = styled.div`
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  width: 6rem;
   position: relative;
 `;
 

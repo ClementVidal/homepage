@@ -2,6 +2,7 @@ import { FunctionComponent, memo } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import Tooltip from "../tooltip";
+import { breakpointUp } from "themes";
 
 interface CatalogItem {
   logo: string;
@@ -48,6 +49,14 @@ const Catalog: Record<string, CatalogItem> = {
   rxjs: {
     logo: "/icons/rxjs.svg",
     displayName: "Rxjs"
+  },
+  opengl: {
+    logo: "/icons/opengl.svg",
+    displayName: "OpenGL"
+  },
+  directx: {
+    logo: "/icons/directx.svg",
+    displayName: "DirectX"
   }
 }
 
@@ -76,6 +85,14 @@ const Wrapper = styled.div`
   overflow: hidden;
   display: inline-flex;
   border-radius: 5px;
+
+  width: 2.5rem;
+  height: 2.5rem;
+
+  ${breakpointUp("mobile")} {
+    width: 3rem;
+    height: 3rem;
+  }
   box-shadow: 0px 0px 7px 0px  ${props => props.theme.color.blackWithOpacity(0.2)};
 `;
 

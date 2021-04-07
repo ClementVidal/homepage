@@ -1,16 +1,9 @@
-import styled, { DefaultTheme } from "styled-components";
-import { applyFontStyle } from "themes";
-import Image from "next/image";
+import styled from "styled-components";
+import { applyFontStyle, breakpointDown, breakpointUp, underline } from "themes";
 import Link from "next/link";
-import { useScrollTo } from "../scroll-to";
+import Social from "../social";
 
 const Content = () => {
-
-  const [scrollTo] = useScrollTo();
-
-  const handleGoToExperience = () => {
-    scrollTo(".experiences", -16*4);
-  }
 
   return (
     <Wrapper>
@@ -31,88 +24,39 @@ const Content = () => {
           </Link>
         </li>
       </Links>
-      <Social>
-        <li>
-          <a href="http://github.com/ClementVidal" target="_blank">
-            <Image src="/icons/github.svg" alt="Github link" width="30" height="30" />
-          </a>
-        </li>
-        <li>
-          <a href="https://dev.to/clementvidal" target="_blank">
-            <Image src="/icons/dev.svg" alt="Dev.to" width="30" height="30" />
-          </a>
-        </li>
-        <li>
-          <a href="https://twitter.com/clementvidalpro" target="_blank">
-            <Image src="/icons/twitter.svg" alt="Twitter link" width="30" height="30" />
-          </a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/clementvidalprofile/" target="_blank">
-            <Image src="/icons/linkedin.svg" alt="Linkedin link" width="30" height="30" />
-          </a>
-        </li>
-      </Social>
+      <SocialContainer>
+        <Social/>
+      </SocialContainer>
     </Wrapper>
   );
 }
 
-const underline = (theme: DefaultTheme, onHover: boolean) => `
-position: relative;
-&:after {
-  transition: transform 175ms ease-in-out;
-  content: "";
-  height: 2px;
-  background-color: ${theme.color.secondary};
-  width:100%;
-  position: absolute;
-  left: 0px;
-  bottom: -12px;
-  transform-origin: left;
-  opacity: ${onHover ? "0" : "1"};
-  transform: scaleX(${onHover ? "0" : "1"});
-}
-
-${onHover ?
-    `&:hover {
-  &:after {
-    opacity: 1;
-    transform: scaleX(1);
-  }
-}` : ""}
-`;
-
 const Name = styled.div`
   h1 {
-    ${props => applyFontStyle(props.theme, "h2")}
+    ${props => applyFontStyle(props.theme, "h3")}
     display: inline-block;
     ${props => underline(props.theme, false)}
+
+    ${breakpointUp("mobile")} {
+      ${props => applyFontStyle(props.theme, "h2")}
+    }
+  }
+`;
+
+const SocialContainer = styled.div`
+  ${breakpointDown("mobile")} {
+    display: none;
   }
 `;
 
 const Wrapper = styled.nav`
   display: grid;
-  grid-template-columns: 1fr max-content 1fr;
   align-items: center;
-  padding: 2rem;
-`;
+  grid-template-columns: max-content 1fr max-content;
+  padding: 1rem;
 
-const Social = styled.ul`
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: max-content;
-  justify-content: end;
-  margin: 0;
-  padding: 0;
-  li {
-    display: inline-flex;
-    margin: 0 0.5rem;
-    box-shadow: 0px 0px 7px 0px  ${props => props.theme.color.black};
-  }
-  a {
-    display: inline-flex;
-    cursor: pointer;
-    ${props => underline(props.theme, true)}
+  ${breakpointUp("mobile")} {
+    padding: 2rem;
   }
 `;
 
@@ -122,9 +66,14 @@ const Links = styled.ul`
   grid-template-columns: max-content;
   margin: 0;
   padding: 0;
+  justify-self: center;
+
   li {
     display: inline-flex;
-    padding: 0 1rem;
+    padding: 0 0.5rem;
+    ${breakpointUp("mobile")} {
+      padding: 0 1rem;
+    }
   }
 
   a {

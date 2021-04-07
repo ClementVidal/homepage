@@ -9,12 +9,6 @@ interface FontStyle {
 
 declare module "styled-components" {
   export interface DefaultTheme {
-    breakpoint: {
-      mobile: string;
-      tablet: string;
-      desktop: string;
-      largeDesktop: string;
-    };
     fontStyle: {
       h1: FontStyle;
       h2: FontStyle;
