@@ -1,11 +1,10 @@
 import { BlogArticle } from "blog-article";
 import { FunctionComponent } from "react";
 import styled from "styled-components";
-import { applyFontStyle, breakpointUp } from "themes";
+import { applyFontStyle, breakpointUp, underline } from "themes";
 import TimelineSegment from "../../components/timeline-segment";
 import TimeRange from "../../components/time-range";
 import useHover from "../../components/hover";
-import { SkillType } from "../../components/skill";
 import SkillsList from "../../components/skills-list";
 
 interface PostProps {
@@ -28,32 +27,52 @@ const Post: FunctionComponent<PostProps> = ({ article, index }) => {
             {article.title}
           </a>
         </Title>
-        <Description>
-          {article.description}
-        </Description>
-        <Link>
-          <a href={article.canonical_url} target="_blank">
-            Read on Dev.to
+        <Info>
+          <ul>
+            <li>
+              Reactions: <span>{article.positive_reactions_count}</span>
+            </li>
+            <li>
+              Comments: <span>{article.comments_count}</span>
+            </li>
+          </ul>
+          <div>
+            <a href={article.canonical_url} target="_blank">
+              Read on Dev.to
           </a>
-        </Link>
+          </div>
+        </Info>
         <SkillsList skills={article.tag_list} />
       </ContentContainer>
     </Wrapper>
   )
 }
 
-const Link = styled.div`
+const Info = styled.div`
   ${props => applyFontStyle(props.theme, "body")}
-  text-align: right;
   padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  ul {
+    display: flex;
+    span {
+        font-weight: 400;
+    }
+
+    li {
+      margin-right: 1rem;
+    }
+  }
+  a {
+    font-weight: 400;
+    ${props => underline(props.theme, true, 0.3)}
+  }
 `;
 
 const Title = styled.div`
   ${props => applyFontStyle(props.theme, "h2")}
-`;
-
-const Description = styled.div`
-  ${props => applyFontStyle(props.theme, "body")}
 `;
 
 const TimeRangeContainer = styled.div`

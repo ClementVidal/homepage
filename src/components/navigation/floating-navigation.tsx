@@ -4,7 +4,7 @@ import { useScrollPosition } from "components/scroll-position";
 import { Decoration } from "components";
 import { useCallback, useState } from "react";
 
-const DetachedThrshold = 465;
+const DetachedThrshold = 350;
 
 const FloatingNavigation = () => {
 

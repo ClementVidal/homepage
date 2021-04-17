@@ -12,7 +12,8 @@ export const applyFontStyle = (
   `;
 };
 
-export const underline = (theme: DefaultTheme, onHover: boolean) => `
+
+export const underline = (theme: DefaultTheme, onHover: boolean, gap: number|null = null) => `
 position: relative;
 &:after {
   transition: transform 175ms ease-in-out;
@@ -26,11 +27,13 @@ position: relative;
   ${breakpointUp("mobile")} {
     bottom: -0.8rem;
   }
+  ${gap ? `bottom: -${gap}rem !important;` : ""}
   transform-origin: left;
   opacity: ${onHover ? "0" : "1"};
   transform: scaleX(${onHover ? "0" : "1"});
-  ${onHover ?
-    `&:hover {
+}
+${onHover ? `
+&:hover {
   &:after {
     opacity: 1;
     transform: scaleX(1);
