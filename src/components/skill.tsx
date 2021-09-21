@@ -61,6 +61,22 @@ const Catalog: Record<string, CatalogItem> = {
   directx: {
     logo: "/icons/directx.svg",
     displayName: "DirectX"
+  },
+  appsync: {
+    logo: "/icons/appsync.png",
+    displayName: "AWS AppSync"
+  },
+  redux: {
+    logo: "/icons/redux.png",
+    displayName: "Redux"
+  },
+  reduxSaga: {
+    logo: "/icons/reduxSaga.png",
+    displayName: "Redux Saga"
+  },
+  openapi: {
+    logo: "/icons/openapi.png",
+    displayName: "Open API"
   }
 }
 
