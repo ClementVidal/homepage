@@ -15,11 +15,11 @@ const Profile = () => {
             My name is Clément.
           </Line1>
           <Line2>
-            Senior software Engineer.
+            I'm a senior software engineer.
           </Line2>
         </h1>
         <h2>
-          Lead frontend engineer at Privowny
+          Lead frontend engineer at Mindflow.
         </h2>
       </Section>
       <section>
